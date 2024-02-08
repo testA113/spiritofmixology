@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: Spirit of Mixology
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
+    default: Spirit of Mixology
+    template: '%s — Spirit of Mixology'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Spirit of Mixology
     images:
       - url: '~/assets/images/default.png'
         width: 1200
