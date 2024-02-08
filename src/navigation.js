@@ -23,5 +23,5 @@ export const footerData = {
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
   ],
-  footNote: 'Made with ♥️ by Ali Harris · All rights reserved.',
+  footNote: 'Made with ♥️ by Ali Harris',
 };
