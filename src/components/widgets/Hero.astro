@@ -7,6 +7,8 @@ export interface Props {
   id?: string;
   title?: string;
   subtitle?: string;
+  date?: string;
+  countdown?: string;
   tagline?: string;
   content?: string;
   actions?: string | CallToAction[];
@@ -17,6 +19,8 @@ const {
   id,
   title = await Astro.slots.render('title'),
   subtitle = await Astro.slots.render('subtitle'),
+  date = await Astro.slots.render('date'),
+  countdown = await Astro.slots.render('countdown'),
   tagline,
   content = await Astro.slots.render('content'),
   actions = await Astro.slots.render('actions'),
@@ -47,7 +51,13 @@ const {
           )
         }
         <div class="max-w-3xl mx-auto">
-          {subtitle && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={subtitle} />}
+          {subtitle && <p class="text-xl text-muted dark:text-slate-300 mb-24" set:html={subtitle} />}
+          {date && <p class="text-xl text-muted mb-6 dark:text-slate-300" set:html={date} />}
+          {
+            countdown && (
+              <div class="flex items-center justify-center gap-x-2 mb-6 dark:text-slate-300" set:html={countdown} />
+            )
+          }
           {
             actions && (
               <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
