@@ -15,6 +15,20 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
+  <!-- bg section -->
+  <div
+    class="mix-blend-difference z-50 w-full h-screen fixed flex top-0 bottom-0 right-0 left-0 justify-center pointer-events-none"
+  >
+    <div class="w-full h-[10rem] opacity-30 justify-center flex fixed bottom-0 blur-[128rem] md:blur-[256rem]">
+      <div class="h-[200%] rounded-full bg-folly w-full md:w-4/5"></div>
+    </div>
+    <div
+      bg-texture="tiles"
+      class="opacity-10 w-full h-full flex absolute top-0 bottom-0 left-0 right-0 bg-[url('https://webflow-files-prod.global.ssl.fastly.net/647d7a596d3b30dafe7f7d07/647d7b5e1383c7b582a4ff02_grain-tile_500x500.webp')] bg-[length:250px_250px] pointer-events-none animate-scroll-down"
+    >
+    </div>
+  </div>
+  <!-- /bg section -->
   <slot name="header">
     <Header {...headerData} isSticky />
   </slot>
