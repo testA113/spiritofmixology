@@ -27,37 +27,40 @@ const metadata = {
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'Spirit of Mixology Hero Image' }}
   >
-    <Fragment slot="title"> Spirit of Mixology </Fragment>
+    <Fragment slot="title">
+      <div>Spirit of</div>
+      <div>Mixology</div>
+    </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Experience the nation's inaugural cocktail festival featuring top-shelf spirit vendors, renowned bartenders, and
-        exciting activities
+        Experience the inaugural <b class="text-folly">cocktail festival</b> featuring mind-blowing cocktails from renowned
+        bartenders, and exciting activities
       </span>
     </Fragment>
     <Fragment slot="date">
-      <span>April 15-17, 2024</span>
+      <span>June 17, 2024</span>
     </Fragment>
     <Fragment slot="countdown">
       <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-12 h-12 bg-white rounded-md dark:bg-gray-800">
+        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
           <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">3</span>
         </div>
         <div class="text-sm">months</div>
       </div>
       <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-12 h-12 bg-white rounded-md dark:bg-gray-800">
+        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
           <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">22</span>
         </div>
         <div class="text-sm">days</div>
       </div>
       <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-12 h-12 bg-white rounded-md dark:bg-gray-800">
+        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
           <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">8</span>
         </div>
         <div class="text-sm">hours</div>
       </div>
       <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-12 h-12 bg-white rounded-md dark:bg-gray-800">
+        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
           <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">56</span>
         </div>
         <div class="text-sm">seconds</div>
