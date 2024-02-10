@@ -7,14 +7,13 @@ module.exports = {
       colors: {
         primary: 'var(--aw-color-primary)',
         secondary: 'var(--aw-color-secondary)',
-        accent: 'var(--aw-color-accent)',
+        accent: '#f7184e',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
-        folly: '#f7184e',
       },
       fontFamily: {
-        sans: ['Unbounded', ...defaultTheme.fontFamily.sans],
-        serif: ['Unbounded', ...defaultTheme.fontFamily.serif],
+        sans: ['Trash', ...defaultTheme.fontFamily.sans],
+        serif: ['Trash', ...defaultTheme.fontFamily.serif],
         heading: ['Concert One', ...defaultTheme.fontFamily.sans],
       },
       animation: {
