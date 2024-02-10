@@ -70,7 +70,7 @@ ui:
   tokens:
     default:
       fonts:
-        sans: Unbounded
+        sans: Trash
         serif: var(--ph-font-sans)
         heading: var(--ph-font-sans)
       colors:
