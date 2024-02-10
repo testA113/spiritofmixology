@@ -1,6 +1,6 @@
 site:
   name: Spirit of Mixology
-  site: 'https://astrowind.vercel.app'
+  site: 'https://spiritofmixologystaging.vercel.app/'
   base: '/'
   trailingSlash: false
 
@@ -22,10 +22,6 @@ metadata:
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
-    cardType: summary_large_image
 
 i18n:
   language: en
@@ -69,12 +65,12 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'dark' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   tokens:
     default:
       fonts:
-        sans: InterVariable
+        sans: Unbounded
         serif: var(--ph-font-sans)
         heading: var(--ph-font-sans)
       colors:

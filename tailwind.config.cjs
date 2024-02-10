@@ -13,9 +13,9 @@ module.exports = {
         folly: '#f7184e',
       },
       fontFamily: {
-        sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
-        heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
+        sans: ['Unbounded', ...defaultTheme.fontFamily.sans],
+        serif: ['Unbounded', ...defaultTheme.fontFamily.serif],
+        heading: ['Concert One', ...defaultTheme.fontFamily.sans],
       },
       animation: {
         fadein: 'fadein 1s forwards',
