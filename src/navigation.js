@@ -2,15 +2,15 @@ export const headerData = {
   links: [
     {
       text: 'event info',
-      href: '#widgets',
+      href: '#event-info',
     },
     {
       text: 'vendors',
-      href: '#widgets',
+      href: '#vendors',
     },
     {
       text: 'contact',
-      href: '#widgets',
+      href: '#contact',
     },
   ],
   actions: [{ text: 'get your tickets', href: 'https://github.com/onwidget/astrowind', target: '_blank' }],
