@@ -16,7 +16,7 @@ export function JiggleLink({ url, children, width }: PropsWithChildren<Props>) {
     >
       <div
         className={clsx(
-          'h-[145%] w-[120%] md:w-[150%] border border-accent border-solid rounded-[200px/50px] md:rounded-[130px/50px] flex absolute -rotate-2 group-hover:animate-jiggle1',
+          'h-[145%] w-[120%] md:w-[150%] border border-accent border-solid rounded-[200px/50px] md:rounded-[130px/50px] flex absolute -rotate-2 animate-none md:group-hover:animate-jiggle1',
           {
             '!rounded-[200px/50px]': width === 'wide',
           }
@@ -24,7 +24,7 @@ export function JiggleLink({ url, children, width }: PropsWithChildren<Props>) {
       ></div>
       <div
         className={clsx(
-          'h-[145%] w-[120%] md:w-[150%] border border-accent border-solid rounded-[200px/50px] md:rounded-[130px/50px] flex absolute rotate-1 md:rotate-1 group-hover:animate-jiggle2',
+          'h-[145%] w-[120%] md:w-[150%] border border-accent border-solid rounded-[200px/50px] md:rounded-[130px/50px] flex absolute rotate-1 md:rotate-1 animate-none md:group-hover:animate-jiggle2',
           {
             '!rounded-[200px/50px]': width === 'wide',
           }

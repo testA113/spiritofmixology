@@ -13,7 +13,7 @@ export const headerData = {
       href: '#contact',
     },
   ],
-  actions: [{ text: 'get your tickets', href: 'https://github.com/onwidget/astrowind' }],
+  actions: [{ text: 'get your tickets', href: 'https://google.com' }],
 };
 
 export const footerData = {
