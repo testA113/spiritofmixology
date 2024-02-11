@@ -5,6 +5,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import Contact from '~/components/widgets/Contact.astro';
+import { Countdown } from '~/components/ui/Countdown.tsx';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -41,30 +42,7 @@ const metadata = {
       <span>June 17, 2024</span>
     </Fragment>
     <Fragment slot="countdown">
-      <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
-          <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">3</span>
-        </div>
-        <div class="text-sm">months</div>
-      </div>
-      <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
-          <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">22</span>
-        </div>
-        <div class="text-sm">days</div>
-      </div>
-      <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
-          <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">8</span>
-        </div>
-        <div class="text-sm">hours</div>
-      </div>
-      <div class="flex flex-col gap-y-2-justify-center">
-        <div class="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
-          <span class="text-2xl font-bold text-gray-900 dark:text-gray-100">56</span>
-        </div>
-        <div class="text-sm">seconds</div>
-      </div>
+      <Countdown client:load />
     </Fragment>
   </Hero>
 
