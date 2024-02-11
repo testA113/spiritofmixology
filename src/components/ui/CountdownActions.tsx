@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { DateTime, Duration, Interval } from 'luxon';
+import { JiggleLink } from './JiggleLink';
 
 const eventStartTime = DateTime.fromObject({ year: 2024, month: 6, day: 17, hour: 17 }, { zone: 'Pacific/Auckland' });
 const eventEndTime = DateTime.fromObject({ year: 2024, month: 6, day: 17, hour: 22 }, { zone: 'Pacific/Auckland' });
 
-export function Countdown() {
+export function CountdownActions() {
   const [currentTime, setCurrentTime] = useState(DateTime.now());
   const isEventStarted = currentTime >= eventStartTime;
   const isEventOver = currentTime > eventEndTime;
@@ -25,17 +26,27 @@ export function Countdown() {
   }, []);
 
   return (
-    <div className="flex gap-x-2 w-full justify-center">
+    <>
+      <div className="flex gap-x-2 w-full justify-center mb-4">
+        {!isEventStarted && (
+          <>
+            {Object.entries(durationUntilStart).map(([key, value]) => (
+              <TimerUnit key={key} value={value} label={key} />
+            ))}
+          </>
+        )}
+        {isEventStarted && !isEventOver && <Message message="we are live! see you there 🎉" />}
+        {isEventOver && <Message message="event is over! see you soon 🫶" />}
+      </div>
       {!isEventStarted && (
-        <>
-          {Object.entries(durationUntilStart).map(([key, value]) => (
-            <TimerUnit key={key} value={value} label={key} />
-          ))}
-        </>
+        <div className="flex max-w-xs sm:max-w-md m-auto">
+          <JiggleLink url="https://google.com">
+            <span className="text-lg md:text-xl md:hidden">get your tickets</span>
+            <span className="text-lg md:text-xl hidden md:block">get 'em!</span>
+          </JiggleLink>
+        </div>
       )}
-      {isEventStarted && !isEventOver && <Message message="we are live! see you there 🎉" />}
-      {isEventOver && <Message message="event is over! see you soon 🫶" />}
-    </div>
+    </>
   );
 }
 

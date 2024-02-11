@@ -1,11 +1,11 @@
 ---
 import Logo from '~/components/Logo.astro';
 import ToggleMenu from '~/components/common/ToggleMenu.astro';
-import Button from '~/components/ui/Button.astro';
 
 import { getHomePermalink } from '~/utils/permalinks';
 import { trimSlash } from '~/utils/permalinks';
 import type { CallToAction } from '~/types';
+import { JiggleLink } from '../ui/JiggleLink';
 
 interface Link {
   text?: string;
@@ -106,11 +106,9 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
         <span class="ml-4 rtl:ml-0 rtl:mr-4">
           {
             actions.map((btnProps) => (
-              <Button
-                {...btnProps}
-                class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto"
-                variant="primary"
-              />
+              <JiggleLink url={btnProps.url} width="wide">
+                <span>{btnProps.text}</span>
+              </JiggleLink>
             ))
           }
         </span>
