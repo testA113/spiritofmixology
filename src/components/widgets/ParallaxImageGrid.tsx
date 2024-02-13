@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 
 const frontScalingFactor = 0.05;
-// const backScalingFactor = 0.05;
 
-import festivalCocktailPreparing from 'src/assets/images/festival-cocktail-preparing.jpg';
-import cocktailVendor from 'src/assets/images/cocktail-vendor.jpg';
-import aperolGinSour from 'src/assets/images/aperol-gin-sour.jpg';
+import festivalCocktailPreparing from 'public/festival-cocktail-preparing.jpg';
+import cocktailVendor from 'public/cocktail-vendor.jpg';
+import aperolGinSour from 'public/aperol-gin-sour.jpg';
 
 export function ParallaxImageGrid() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -25,47 +24,28 @@ export function ParallaxImageGrid() {
   }, []);
 
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center relative opacity-100 overflow-hidden">
+    <div className="h-full w-full flex flex-col justify-center items-center relative opacity-100 overflow-x-hidden overflow-y-visible">
       <div
-        className="grid w-[120%] h-[120%] grid-cols-6"
+        className="grid w-full h-full sm:grid-cols-10 md:grid-cols-11 lg:grid-cols-12"
         style={{
           transform: `translate3d(-${cursor.x * frontScalingFactor}px, -${cursor.y * frontScalingFactor}px, 0)`,
         }}
       >
-        <div className="col-span-6"></div>
-        <div className="col-span-2"></div>
-        <div>
-          <img
-            src={festivalCocktailPreparing.src}
-            alt="at a festival, a bartender skillfully pours a vodka from a height to prepare a cocktail"
-            className="blur-md md:blur-lg hover:blur-0 transition-all duration-500"
-          ></img>
-        </div>
-        <div className="col-span-3"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div>
-          <img
-            src={cocktailVendor.src}
-            alt="a cocktail stall serving earger customers"
-            className="blur-md md:blur-lg hover:blur-0 transition-all duration-500"
-          ></img>
-        </div>
-        <div></div>
-        <div>
-          <img
-            src={aperolGinSour.src}
-            alt="aperol gin sour cocktail"
-            className="blur-md md:blur-lg hover:blur-0 transition-all duration-500"
-          ></img>
-        </div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <img
+          src={festivalCocktailPreparing.src}
+          alt="at a festival, a bartender skillfully pours a vodka from a height to prepare a cocktail"
+          className="col-start-4 col-end-6 row-start-1 row-end-2 blur-md md:blur-lg hover:blur-0 transition-all duration-500"
+        ></img>
+        <img
+          src={cocktailVendor.src}
+          alt="a cocktail stall serving earger customers"
+          className="col-start-9 col-end-12 row-start-2 row-end-3 blur-md md:blur-lg hover:blur-0 transition-all duration-500"
+        ></img>
+        <img
+          src={aperolGinSour.src}
+          alt="aperol gin sour cocktail"
+          className="col-start-3 col-end-5 row-start-3 row-end-4 blur-md md:blur-lg hover:blur-0 transition-all duration-500"
+        ></img>
       </div>
     </div>
   );
