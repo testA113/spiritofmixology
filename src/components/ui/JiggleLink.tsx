@@ -15,6 +15,7 @@ export function JiggleLink({ url, children, width }: PropsWithChildren<Props>) {
       className="text-white flex items-center justify-center relative group"
     >
       <div
+        aria-hidden="true"
         className={clsx(
           'h-[145%] w-[120%] md:w-[150%] border border-accent border-solid rounded-[200px/50px] md:rounded-[130px/50px] flex absolute -rotate-2 animate-none md:group-hover:animate-jiggle1',
           {
@@ -23,6 +24,7 @@ export function JiggleLink({ url, children, width }: PropsWithChildren<Props>) {
         )}
       ></div>
       <div
+        aria-hidden="true"
         className={clsx(
           'h-[145%] w-[120%] md:w-[150%] border border-accent border-solid rounded-[200px/50px] md:rounded-[130px/50px] flex absolute rotate-1 md:rotate-1 animate-none md:group-hover:animate-jiggle2',
           {
