@@ -29,7 +29,7 @@ const {
 
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
   {imageGrid && <div class="absolute inset-0 h-svh top-0 left-0 right-0" aria-hidden="true" set:html={imageGrid} />}
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 z-20 pointer-events-none">
     <div class="pt-0 md:pt-[76px]"></div>
     <div class="py-12 md:py-20">
       <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
@@ -44,7 +44,7 @@ const {
         {
           title && (
             <h1
-              class="text-6xl md:text-[5rem] font-bold leading-tighter tracking-tight mb-8 font-heading dark:text-gray-200 z-20"
+              class="text-6xl md:text-[5rem] font-bold leading-tighter tracking-tight mb-8 font-heading dark:text-gray-200 !z-20"
               set:html={title}
             />
           )
@@ -60,24 +60,24 @@ const {
               />
             )
           }
-          {
-            actions && (
-              <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
-                {Array.isArray(actions) ? (
-                  actions.map((action) => (
-                    <div class="flex w-full sm:w-auto">
-                      <Button {...(action || {})} class="w-full sm:mb-0" />
-                    </div>
-                  ))
-                ) : (
-                  <Fragment set:html={actions} />
-                )}
-              </div>
-            )
-          }
         </div>
         {content && <Fragment set:html={content} />}
       </div>
     </div>
   </div>
+  {
+    actions && (
+      <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 point">
+        {Array.isArray(actions) ? (
+          actions.map((action) => (
+            <div class="flex w-full sm:w-auto">
+              <Button {...(action || {})} class="w-full sm:mb-0" />
+            </div>
+          ))
+        ) : (
+          <Fragment set:html={actions} />
+        )}
+      </div>
+    )
+  }
 </section>
