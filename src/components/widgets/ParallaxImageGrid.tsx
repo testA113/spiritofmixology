@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 
-const frontScalingFactor = 0.05;
+const cursorScalingFactor = 0.05;
+const scrollScalingFactor = 0.1;
 
-import festivalCocktailPreparing from 'public/festival-cocktail-preparing.jpg';
-import cocktailVendor from 'public/cocktail-vendor.jpg';
-import aperolGinSour from 'public/aperol-gin-sour.jpg';
+import festivalCocktailPreparing from '/src/assets/images/festival-cocktail-preparing.jpg';
+import cocktailVendor from '/src/assets/images/cocktail-vendor.jpg';
+import aperolGinSour from '/src/assets/images/aperol-gin-sour.jpg';
 
 export function ParallaxImageGrid() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
+  const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleWindowMouseMove = (e: MouseEvent) => {
@@ -16,19 +18,36 @@ export function ParallaxImageGrid() {
         y: e.clientY,
       });
     };
+    const handleWindowScroll = () => {
+      setScrollPosition({
+        x: window.scrollX,
+        y: window.scrollY,
+      });
+    };
     window.addEventListener('mousemove', handleWindowMouseMove);
+    window.addEventListener('scroll', handleWindowScroll);
 
     return () => {
       window.removeEventListener('mousemove', handleWindowMouseMove);
+      window.removeEventListener('scroll', handleWindowScroll);
     };
   }, []);
 
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center relative opacity-100 overflow-x-hidden overflow-y-visible">
+    <ImageGrid
+      translateX={-cursor.x * cursorScalingFactor + scrollPosition.x * scrollScalingFactor}
+      translateY={-cursor.y * cursorScalingFactor + scrollPosition.y * scrollScalingFactor}
+    />
+  );
+}
+
+function ImageGrid({ translateX, translateY }: { translateX: number; translateY: number }) {
+  return (
+    <div className="h-full w-full flex flex-col justify-center items-center relative opacity-100 overflow-hidden">
       <div
-        className="grid w-full h-full sm:grid-cols-10 md:grid-cols-11 lg:grid-cols-12"
+        className="grid w-full h-full grid-6 md:grid-cols-10 lg:grid-cols-12"
         style={{
-          transform: `translate3d(-${cursor.x * frontScalingFactor}px, -${cursor.y * frontScalingFactor}px, 0)`,
+          transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
         }}
       >
         <img
