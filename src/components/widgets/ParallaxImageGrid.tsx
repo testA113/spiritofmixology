@@ -3,6 +3,10 @@ import { useEffect, useState } from 'react';
 const frontScalingFactor = 0.05;
 // const backScalingFactor = 0.05;
 
+import festivalCocktailPreparing from 'src/assets/images/festival-cocktail-preparing.jpg';
+import cocktailVendor from 'src/assets/images/cocktail-vendor.jpg';
+import aperolGinSour from 'src/assets/images/aperol-gin-sour.jpg';
+
 export function ParallaxImageGrid() {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
 
@@ -32,7 +36,7 @@ export function ParallaxImageGrid() {
         <div className="col-span-2"></div>
         <div>
           <img
-            src="public/festival-cocktail-preparing.jpg"
+            src={festivalCocktailPreparing.src}
             alt="at a festival, a bartender skillfully pours a vodka from a height to prepare a cocktail"
             className="blur-md md:blur-lg hover:blur-0 transition-all duration-500"
           ></img>
@@ -45,7 +49,7 @@ export function ParallaxImageGrid() {
         <div></div>
         <div>
           <img
-            src="public/cocktail-vendor.jpg"
+            src={cocktailVendor.src}
             alt="a cocktail stall serving earger customers"
             className="blur-md md:blur-lg hover:blur-0 transition-all duration-500"
           ></img>
@@ -53,7 +57,7 @@ export function ParallaxImageGrid() {
         <div></div>
         <div>
           <img
-            src="public/aperol-gin-sour.jpg"
+            src={aperolGinSour.src}
             alt="aperol gin sour cocktail"
             className="blur-md md:blur-lg hover:blur-0 transition-all duration-500"
           ></img>
