@@ -90,17 +90,17 @@ function ImageGrid({ translateX, translateY }: { translateX: number; translateY:
         <img
           src={festivalCocktailPreparing.src}
           alt="at a festival, a bartender skillfully pours a vodka from a height to prepare a cocktail"
-          className="col-start-4 col-end-6 row-start-1 row-end-2 blur-md md:blur-lg transition-all md:hover:scale-105 duration-500 -rotate-1"
+          className="col-start-4 col-end-6 row-start-1 row-end-2 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 -rotate-1"
         ></img>
         <img
           src={cocktailVendor.src}
           alt="a cocktail stall serving earger customers"
-          className="col-start-9 col-end-12 row-start-2 row-end-3 blur-md md:blur-lg transition-all md:hover:scale-105 duration-500 rotate-3"
+          className="col-start-9 col-end-12 row-start-2 row-end-3 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 rotate-3"
         ></img>
         <img
           src={erricks.src}
           alt="wide angle of erricks venue with a band playing"
-          className="col-start-3 col-end-7 lg:col-end-6 xl:col-end-5 row-start-3 row-end-4 blur-md md:blur-lg transition-all md:hover:scale-105 duration-500 -rotate-2"
+          className="col-start-3 col-end-7 lg:col-end-6 xl:col-end-5 row-start-3 row-end-4 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 -rotate-2"
         ></img>
       </div>
     </div>
