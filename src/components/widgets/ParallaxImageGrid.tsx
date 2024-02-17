@@ -1,13 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type PropsWithChildren } from 'react';
 
 const cursorScalingFactor = 0.05;
 const scrollScalingFactor = 0.1;
 
-import festivalCocktailPreparing from '/src/assets/images/festival-cocktail-preparing.jpg';
-import cocktailVendor from '/src/assets/images/cocktail-vendor.jpg';
-import erricks from '/src/assets/images/erricks.jpg';
-
-export function ParallaxImageGrid() {
+export function ParallaxImageGrid({ children }: PropsWithChildren<{}>) {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const [scrollPosition, setScrollPosition] = useState({ x: 0, y: 0 });
 
@@ -38,11 +34,21 @@ export function ParallaxImageGrid() {
     <ImageGrid
       translateX={isMobile ? scrollPosition.x * scrollScalingFactor : -cursor.x * cursorScalingFactor}
       translateY={isMobile ? scrollPosition.y * scrollScalingFactor : -cursor.y * cursorScalingFactor}
-    />
+    >
+      {children}
+    </ImageGrid>
   );
 }
 
-function ImageGrid({ translateX, translateY }: { translateX: number; translateY: number }) {
+function ImageGrid({
+  translateX,
+  translateY,
+  children,
+}: {
+  translateX: number;
+  translateY: number;
+  children: ReactNode;
+}) {
   const imagesRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
@@ -87,21 +93,7 @@ function ImageGrid({ translateX, translateY }: { translateX: number; translateY:
           transform: `translate3d(${translateX}px, ${translateY}px, 0)`,
         }}
       >
-        <img
-          src={festivalCocktailPreparing.src}
-          alt="at a festival, a bartender skillfully pours a vodka from a height to prepare a cocktail"
-          className="col-start-4 col-end-6 row-start-1 row-end-2 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 -rotate-1"
-        ></img>
-        <img
-          src={cocktailVendor.src}
-          alt="a cocktail stall serving earger customers"
-          className="col-start-9 col-end-12 row-start-2 row-end-3 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 rotate-3"
-        ></img>
-        <img
-          src={erricks.src}
-          alt="wide angle of erricks venue with a band playing"
-          className="col-start-3 col-end-7 lg:col-end-6 xl:col-end-5 row-start-3 row-end-4 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 -rotate-2"
-        ></img>
+        {children}
       </div>
     </div>
   );

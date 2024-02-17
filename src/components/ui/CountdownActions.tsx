@@ -27,7 +27,7 @@ export function CountdownActions() {
 
   return (
     <>
-      <div className="flex gap-x-2 w-full justify-center mb-4">
+      <div className="flex gap-x-2 justify-center mb-4">
         {!isEventStarted && (
           <>
             {Object.entries(durationUntilStart).map(([key, value]) => (
