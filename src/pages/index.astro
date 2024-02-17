@@ -8,6 +8,7 @@ import Contact from '~/components/widgets/Contact.astro';
 import { CountdownActions } from '~/components/ui/CountdownActions';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { ParallaxImageGrid } from '~/components/widgets/ParallaxImageGrid';
+import ImageGridImages from '~/components/widgets/ImageGridImages.astro';
 
 const metadata = {
   title: 'Spirit of Mixology — Free template for creating websites with Astro + Tailwind CSS',
@@ -43,7 +44,7 @@ const metadata = {
       <CountdownActions client:load />
     </Fragment>
     <Fragment slot="imageGrid">
-      <ParallaxImageGrid client:only />
+      <ParallaxImageGrid client:only><ImageGridImages /></ParallaxImageGrid>
     </Fragment>
   </Hero>
 
@@ -76,7 +77,7 @@ const metadata = {
       alt: 'Blueprint Image',
     }}
   >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
+    <Fragment slot="content">Event info</Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
