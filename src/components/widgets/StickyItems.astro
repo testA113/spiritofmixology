@@ -1,0 +1,81 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import { Image } from 'astro:assets';
+import facePainting from '/src/assets/images/face-painting.png';
+import pavedSurfaces from '/src/assets/images/paved-surfaces.png';
+import GrassSurfaces from '/src/assets/images/grass-surfaces.png';
+import cakeDecorating from '/src/assets/images/cake-decorating.png';
+
+const { content = await Astro.slots.render('content'), id } = Astro.props;
+
+const items = [
+  {
+    image: {
+      src: facePainting,
+      classes: 'rotate-1',
+      alt: 'face painting',
+    },
+    title: 'Face Painting',
+    description:
+      'Enjoy the fun of face painting with our professional face painters. We use only the highest quality, non-toxic, hypoallergenic face paints. Our face painters are skilled artists and can paint a variety of designs to suit any theme. We can also provide a range of glitter tattoos and temporary tattoos.',
+  },
+  {
+    image: {
+      src: pavedSurfaces,
+      classes: '-rotate-3 translate-x-2 -translate-y-1',
+      alt: 'paved surfaces',
+    },
+    title: 'Paved Surfaces',
+    description: 'Our paved surfaces are perfect to stand on and they are not wet or muddy.',
+  },
+  {
+    image: {
+      src: GrassSurfaces,
+      classes: 'rotate-2 -translate-x-1',
+      alt: 'grass surfaces',
+    },
+    title: 'Grass Surfaces',
+    description: 'Our grass surfaces are perfect to stand on but they can get wet and muddy.',
+  },
+  {
+    image: {
+      src: cakeDecorating,
+      classes: '-rotate-1 translate-x-1 translate-y-2',
+      alt: 'cake decorating',
+    },
+    title: 'Cake Decorating',
+    description: 'The kids will love decorating their own cakes with pre-loved materials.',
+  },
+];
+---
+
+<WidgetWrapper id={id}>
+  <div class="mx-auto max-w-7xl p-4 md:px-8">
+    <div class="w-full">
+      {content && <h2 class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+    </div>
+    <div class="md:flex md:gap-16 mt-10 md:mt-0">
+      <!-- item content -->
+      <div class="md:basis-1/2">
+        {
+          items.map(({ title, description }) => (
+            <div class="h-[75svh] md:h-svh">
+              <h3 class="text-2xl">{title}</h3>
+              <p class="text-lg dark:text-slate-400">{description}</p>
+            </div>
+          ))
+        }
+      </div>
+      <!-- sticky images -->
+      <div class="md:basis-1/2">
+        {
+          items.map(({ image }) => (
+            <div class="h-[75svh] md:h-svh sticky top-40">
+              <Image src={image.src} alt={image.alt} class={`rounded-lg ${image.classes}`} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>
