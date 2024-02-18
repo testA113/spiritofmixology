@@ -59,7 +59,7 @@ const items = [
       <div class="md:basis-1/2">
         {
           items.map(({ title, description }) => (
-            <div class="h-[75svh] md:h-svh">
+            <div class="h-[75svh] md:h-[85svh] max-h-[40rem]">
               <h3 class="text-2xl">{title}</h3>
               <p class="text-lg dark:text-slate-400">{description}</p>
             </div>
@@ -70,8 +70,14 @@ const items = [
       <div class="md:basis-1/2">
         {
           items.map(({ image }) => (
-            <div class="h-[75svh] md:h-svh sticky top-40">
-              <Image src={image.src} alt={image.alt} class={`rounded-lg ${image.classes}`} />
+            <div class="h-[75svh] md:h-[85svh] max-h-[40rem] sticky top-40">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                class={`rounded-lg ${image.classes}`}
+                loading="lazy"
+                quality="mid"
+              />
             </div>
           ))
         }
