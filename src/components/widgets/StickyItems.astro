@@ -12,7 +12,7 @@ const items = [
   {
     image: {
       src: facePainting,
-      classes: 'rotate-1',
+      classes: 'md:rotate-1',
       alt: 'face painting',
     },
     title: 'Face Painting',
@@ -22,7 +22,7 @@ const items = [
   {
     image: {
       src: pavedSurfaces,
-      classes: '-rotate-3 translate-x-2 -translate-y-1',
+      classes: 'md:-rotate-3 md:translate-x-2 md:-translate-y-1',
       alt: 'paved surfaces',
     },
     title: 'Paved Surfaces',
@@ -31,7 +31,7 @@ const items = [
   {
     image: {
       src: GrassSurfaces,
-      classes: 'rotate-2 -translate-x-1',
+      classes: 'md:rotate-2 md:-translate-x-1',
       alt: 'grass surfaces',
     },
     title: 'Grass Surfaces',
@@ -40,7 +40,7 @@ const items = [
   {
     image: {
       src: cakeDecorating,
-      classes: '-rotate-1 translate-x-1 translate-y-2',
+      classes: 'md:-rotate-1 md:translate-x-1 md:translate-y-2',
       alt: 'cake decorating',
     },
     title: 'Cake Decorating',
@@ -59,7 +59,7 @@ const items = [
       <div class="md:basis-1/2">
         {
           items.map(({ title, description }) => (
-            <div class="h-[75svh] md:h-[85svh] max-h-[40rem]">
+            <div class="md:h-[85svh] max-h-[40rem] hidden md:block">
               <h3 class="text-2xl">{title}</h3>
               <p class="text-lg dark:text-slate-400">{description}</p>
             </div>
@@ -69,15 +69,19 @@ const items = [
       <!-- sticky images -->
       <div class="md:basis-1/2">
         {
-          items.map(({ image }) => (
-            <div class="h-[75svh] md:h-[85svh] max-h-[40rem] sticky top-40">
+          items.map(({ image, title, description }) => (
+            <div class="mb-24 md:mb-0 md:h-[85svh] max-h-[40rem] md:sticky top-40">
               <Image
                 src={image.src}
                 alt={image.alt}
-                class={`rounded-lg ${image.classes}`}
+                class={`rounded-lg mb-4 md:mb-0 ${image.classes}`}
                 loading="lazy"
                 quality="mid"
               />
+              <div class="max-h-[40rem] md:hidden">
+                <h3 class="text-2xl">{title}</h3>
+                <p class="text-lg dark:text-slate-400">{description}</p>
+              </div>
             </div>
           ))
         }
