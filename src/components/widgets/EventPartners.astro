@@ -8,8 +8,10 @@ const { id, content = await Astro.slots.render('content') } = Astro.props;
 
 <Fragment>
   <WidgetWrapper id={id}>
-    <div class="w-full flex justify-center -mt-24">
-      {content && <h2 class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+    <div class="mx-auto max-w-7xl p-4 md:px-8">
+      <div class="w-full flex justify-center -mt-24">
+        {content && <h2 class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+      </div>
     </div>
   </WidgetWrapper>
   <div class="-mt-24 w-full -skew-y-1 flex overflow-hidden select-none gap-x-8 group">
