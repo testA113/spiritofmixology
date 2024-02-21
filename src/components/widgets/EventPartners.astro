@@ -1,0 +1,117 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import { Image } from 'astro:assets';
+import festivalCocktailPreparing from '/src/assets/images/festival-cocktail-preparing.jpg';
+
+const { id, content = await Astro.slots.render('content') } = Astro.props;
+---
+
+<Fragment>
+  <WidgetWrapper id={id}>
+    <div class="w-full flex justify-center -mt-24">
+      {content && <h2 class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+    </div>
+  </WidgetWrapper>
+  <div class="-mt-24 w-full -skew-y-1 flex overflow-hidden select-none gap-x-8 group">
+    <div
+      class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+    >
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+    </div>
+
+    <div
+      aria-hidden="true"
+      class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+    >
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+      <a
+        href="https://google.com"
+        target="_blank"
+        rel="noopener noreferer"
+        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      >
+        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
+        Cool vendor
+      </a>
+    </div>
+  </div>
+</Fragment>

@@ -19,6 +19,7 @@ module.exports = {
       animation: {
         jiggle1: 'jiggle1 0.33s infinite',
         jiggle2: 'jiggle2 0.4s infinite',
+        marquee: 'marquee 20s linear infinite',
       },
       keyframes: {
         jiggle1: {
@@ -32,6 +33,10 @@ module.exports = {
           '25%': { transform: 'translate(-5px, 3px) rotate(3deg)' },
           '50%': { transform: 'translate(2px, -5px) rotate(-2deg)' },
           '75%': { transform: 'translate(5px, -2px) rotate(4deg)' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(calc(-100% - 2rem))' },
         },
       },
       backgroundImage: {

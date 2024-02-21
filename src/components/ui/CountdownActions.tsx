@@ -2,8 +2,11 @@ import { useEffect, useState } from 'react';
 import { DateTime, Duration, Interval } from 'luxon';
 import { JiggleLink } from './JiggleLink';
 
-const eventStartTime = DateTime.fromObject({ year: 2024, month: 6, day: 17, hour: 17 }, { zone: 'Pacific/Auckland' });
-const eventEndTime = DateTime.fromObject({ year: 2024, month: 6, day: 17, hour: 22 }, { zone: 'Pacific/Auckland' });
+const eventStartTime = DateTime.fromObject({ year: 2024, month: 6, day: 8, hour: 12 }, { zone: 'Pacific/Auckland' });
+const eventEndTime = DateTime.fromObject(
+  { year: 2024, month: 6, day: 8, hour: 16, minute: 30 },
+  { zone: 'Pacific/Auckland' }
+);
 
 export function CountdownActions() {
   const [currentTime, setCurrentTime] = useState(DateTime.now());
@@ -38,6 +41,7 @@ export function CountdownActions() {
         {isEventStarted && !isEventOver && <Message message="we are live! see you there 🎉" />}
         {isEventOver && <Message message="event is over! see you soon 🫶" />}
       </div>
+      {/* hide the ticket link if the event has started */}
       {!isEventStarted && (
         <div className="flex max-w-xs sm:max-w-md m-auto">
           <JiggleLink url="https://google.com">

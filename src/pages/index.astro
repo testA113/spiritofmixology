@@ -2,8 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 import StickyItems from '~/components/widgets/StickyItems.astro';
+import EventPartners from '~/components/widgets/EventPartners.astro';
 import Contact from '~/components/widgets/Contact.astro';
 import { CountdownActions } from '~/components/ui/CountdownActions';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -19,22 +19,24 @@ const metadata = {
 <Layout metadata={metadata}>
   <Hero>
     <Fragment slot="title">
-      <div>Spirit of</div>
-      <div>Mixology</div>
+      <div>Spirit of <span class="text-accent">Mixology</span></div>
+      <div class="text-6xl hidden md:block">Cocktail Festival</div>
     </Fragment>
     <Fragment slot="subtitle">
       <span class="hidden sm:inline">
-        Experience the inaugural <b class="text-accent">cocktail festival</b> showcasing the finest local ingredients in
-        mind-blowing cocktails, mouth-watering food and exciting activities
+        Embark on a journey of mixology mastery at our spectacular <b class="text-accent">Cocktail Festival</b>! Join us
+        for an unforgettable weekend filled with carefully crafted cocktails, live music, and vibrant energy.
       </span>
       <span class="inline sm:hidden">
-        Experience the inaugural <b class="text-accent">cocktail festival</b>
+        Get ready to raise your glasses and embark on a journey of mixology mastery at our spectacular <b
+          class="text-accent">Cocktail Festival</b
+        >!
       </span>
     </Fragment>
     <Fragment slot="date">
       <div class="mb-4">
-        <div>5-10pm</div>
-        <div>17th of June 2024</div>
+        <div>12pm-4:30pm</div>
+        <div>Saturday 8th June</div>
         <span>@ <a href="https://www.erricks.com/" class="underline">Errick's</a>, Dunedin</span>
       </div>
     </Fragment>
@@ -50,68 +52,9 @@ const metadata = {
     <Fragment slot="content">Event info</Fragment>
   </StickyItems>
 
-  <Features2
-    title="Most used widgets"
-    id="vendors"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
+  <EventPartners id="vendors">
+    <Fragment slot="content">Vendors</Fragment>
+  </EventPartners>
 
   <!-- CallToAction Widget *********** -->
 
