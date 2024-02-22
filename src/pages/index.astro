@@ -79,24 +79,12 @@ const metadata = {
     </Fragment>
   </CallToAction>
 
-  <Contact
-    id="contact"
-    title="Let's chat"
-    subtitle="We'd love to hear from you! Send us a message and we'll get back to you as soon as possible."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-  />
+  <Contact id="contact" title="Let's chat">
+    <Fragment slot="subtitle"
+      ><p>We'd love to hear from you! Send us a message at</p><a
+        class="text-white underline"
+        href="mailto:jaz@alchemistmixology.co.nz">jaz@alchemistmixology.co.nz</a
+      ><p>and we'll get back to you as soon as possible.</p></Fragment
+    ></Contact
+  >
 </Layout>
