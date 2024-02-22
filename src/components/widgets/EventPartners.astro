@@ -4,6 +4,41 @@ import { Image } from 'astro:assets';
 import festivalCocktailPreparing from '/src/assets/images/festival-cocktail-preparing.jpg';
 
 const { id, content = await Astro.slots.render('content') } = Astro.props;
+
+const vendors = [
+  {
+    src: festivalCocktailPreparing,
+    alt: 'preparing',
+    name: 'a',
+    link: 'https://google.com',
+  },
+  {
+    src: festivalCocktailPreparing,
+    alt: 'preparing',
+    name: 'b',
+    link: 'https://google.com',
+  },
+  {
+    src: festivalCocktailPreparing,
+    alt: 'preparing',
+    name: 'c',
+    link: 'https://google.com',
+  },
+  {
+    src: festivalCocktailPreparing,
+    alt: 'preparing',
+    name: 'd',
+    link: 'https://google.com',
+  },
+  {
+    src: festivalCocktailPreparing,
+    alt: 'preparing',
+    name: 'e',
+    link: 'https://google.com',
+  },
+];
+
+const vendorsReverse = vendors.slice().reverse();
 ---
 
 <Fragment>
@@ -14,106 +49,85 @@ const { id, content = await Astro.slots.render('content') } = Astro.props;
       </div>
     </div>
   </WidgetWrapper>
-  <div class="-mt-24 w-full -skew-y-1 flex overflow-hidden select-none gap-x-8 group">
+  <div class="group">
     <div
-      class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+      class="-mt-28 w-full md:-skew-y-2 skew-y-1 overflow-hidden select-none gap-x-8 md:blur-md md:pointer-events-none flex"
     >
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+      <div
+        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+        {
+          vendorsReverse.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] md:max-w-[clamp(5rem,1rem+14vmin,10rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center md:pointer-events-none pointer-events-auto md:-scale-x-100"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
-      >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
-      >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
-      >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
+        {
+          vendorsReverse.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] md:max-w-[clamp(5rem,1rem+14vmin,10rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center md:pointer-events-none pointer-events-auto md:-scale-x-100"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
     </div>
 
-    <div
-      aria-hidden="true"
-      class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
-    >
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+    <div class="mt-4 md:-mt-36 w-full skew-y-1 flex overflow-hidden select-none gap-x-8">
+      <div
+        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-merquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+        {
+          vendors.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-merquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
-      >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
-      >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
-      <a
-        href="https://google.com"
-        target="_blank"
-        rel="noopener noreferer"
-        class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
-      >
-        <Image src={festivalCocktailPreparing} alt="preparing" class="rounded-lg text-center" />
-        Cool vendor
-      </a>
+        {
+          vendors.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
     </div>
   </div>
 </Fragment>
