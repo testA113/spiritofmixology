@@ -15,7 +15,7 @@ const { id, content = await Astro.slots.render('content') } = Astro.props;
       <p class="text-xl md:text-xl lg:text-2xl mt-8">we go live in:</p>
     </div>
     <div class="mx-auto max-w-7xl p-4 md:px-8">
-      {content && <div set:html={content} class="flex flex-col items-center" />}
+      {content && <div set:html={content} class="flex flex-col items-center text-center" />}
     </div>
   </WidgetWrapper>
 </Fragment>
