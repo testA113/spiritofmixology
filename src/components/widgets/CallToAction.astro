@@ -7,10 +7,11 @@ const { id, content = await Astro.slots.render('content') } = Astro.props;
 <Fragment>
   <WidgetWrapper id={id}>
     <div class="text-center mt-24">
-      <p class="text-6xl md:text-7xl lg:text-8xl">
-        get your tickets<span class="hidden md:inline-block">,</span>
-      </p>
-      <p class="hidden md:block md:text-7xl lg:text-8xl">while <span class="text-accent">you can</span></p>
+      <div class="hidden md:block">
+        <p class="md:text-7xl lg:text-8xl">get your tickets,</p>
+        <p class="md:text-7xl lg:text-8xl">while <span class="text-accent">you can</span></p>
+      </div>
+      <p class="text-6xl md:hidden"><span class="text-accent">limited</span> tickets available</p>
       <p class="text-xl md:text-xl lg:text-2xl mt-8">we go live in:</p>
     </div>
     <div class="mx-auto max-w-7xl p-4 md:px-8">
