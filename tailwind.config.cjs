@@ -20,7 +20,7 @@ module.exports = {
         jiggle1: 'jiggle1 0.33s infinite',
         jiggle2: 'jiggle2 0.4s infinite',
         marquee: 'marquee 20s linear infinite',
-        'merquee-reverse': 'merquee-reverse 20s linear infinite',
+        'marquee-reverse': 'marquee-reverse 20s linear infinite',
       },
       keyframes: {
         jiggle1: {
@@ -39,7 +39,7 @@ module.exports = {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(calc(-100% - 2rem))' },
         },
-        'merquee-reverse': {
+        'marquee-reverse': {
           '0%': { transform: 'translateX(calc(-100% - 2rem))' },
           '100%': { transform: 'translateX(0%)' },
         },

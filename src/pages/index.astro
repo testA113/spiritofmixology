@@ -6,9 +6,9 @@ import StickyItems from '~/components/widgets/StickyItems.astro';
 import EventPartners from '~/components/widgets/EventPartners.astro';
 import Contact from '~/components/widgets/Contact.astro';
 import { CountdownActions } from '~/components/ui/CountdownActions';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import { ParallaxImageGrid } from '~/components/widgets/ParallaxImageGrid';
 import ImageGridImages from '~/components/widgets/ImageGridImages.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Spirit of Mixology — Free template for creating websites with Astro + Tailwind CSS',
@@ -57,25 +57,9 @@ const metadata = {
   </EventPartners>
 
   <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
+  <CallToAction>
+    <Fragment slot="content">
+      <CountdownActions client:load />
     </Fragment>
   </CallToAction>
 
