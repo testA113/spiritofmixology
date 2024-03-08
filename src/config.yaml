@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Spirit of Mixology
+  site: 'https://spiritofmixologystaging.vercel.app/'
   base: '/'
   trailingSlash: false
 
@@ -9,23 +9,19 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
+    default: Spirit of Mixology
+    template: '%s — Spirit of Mixology'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Spirit of Mixology
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
-  twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
-    cardType: summary_large_image
 
 i18n:
   language: en
@@ -69,12 +65,12 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'dark' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   tokens:
     default:
       fonts:
-        sans: InterVariable
+        sans: Trash
         serif: var(--ph-font-sans)
         heading: var(--ph-font-sans)
       colors:
