@@ -59,14 +59,14 @@ function ImageGrid({
 
     const addBlur = () => {
       for (let img of images) {
-        img.classList.add('blur-md', 'md:blur-lg');
+        img.classList.add('blur-md', 'md:blur-lg', 'brightness-150');
         img.classList.remove('hover:blur-0');
       }
     };
 
     const removeBlur = () => {
       for (let img of images) {
-        img.classList.remove('blur-md', 'md:blur-lg');
+        img.classList.remove('blur-md', 'md:blur-lg', 'brightness-150');
         img.classList.add('hover:blur-0');
       }
     };

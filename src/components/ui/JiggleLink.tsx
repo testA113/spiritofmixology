@@ -12,7 +12,7 @@ export function JiggleLink({ url, children, width }: PropsWithChildren<Props>) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-white flex items-center justify-center relative group"
+      className="text-inherit flex items-center justify-center relative group"
     >
       <div
         aria-hidden="true"

@@ -1,19 +1,20 @@
 ---
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import { Image } from 'astro:assets';
-import facePainting from '/src/assets/images/face-painting.png';
-import pavedSurfaces from '/src/assets/images/paved-surfaces.png';
-import GrassSurfaces from '/src/assets/images/grass-surfaces.png';
-import cakeDecorating from '/src/assets/images/cake-decorating.png';
+import craftCocktails from '/src/assets/images/craft-cocktails.webp';
+import mixologyWorkshops from '/src/assets/images/mixology-workshops.webp';
+import distillerTalks from '/src/assets/images/distiller-talks.webp';
+import liveEntertainment from '/src/assets/images/live-entertainment.webp';
+import cocktailMarket from '/src/assets/images/cocktail-market.webp';
 
 const { content = await Astro.slots.render('content'), id } = Astro.props;
 
 const items = [
   {
     image: {
-      src: facePainting,
+      src: craftCocktails,
       classes: 'md:rotate-1',
-      alt: 'face painting',
+      alt: 'Craft Cocktails',
     },
     title: 'Craft Cocktails',
     description:
@@ -21,19 +22,19 @@ const items = [
   },
   {
     image: {
-      src: pavedSurfaces,
+      src: mixologyWorkshops,
       classes: 'md:-rotate-3 md:translate-x-2 md:-translate-y-1',
-      alt: 'paved surfaces',
+      alt: 'Mixology Workshops',
     },
     title: 'Mixology Workshops',
     description:
-      'Elevate your bartending skills with this interactive masterclass led by Pequeño’s own bar manager Jesse. This class will cover two methods of mixology including shaking, straining & stirring to make two cocktails. All cocktail equipment, ingredients, glassware & garnish will be provided for this class. Tickets additional $36pp.',
+      "Elevate your bartending skills with this interactive masterclass led by Pequeño's own bar manager Jesse. This class will cover two methods of mixology including shaking, straining & stirring to make two cocktails. All cocktail equipment, ingredients, glassware & garnish will be provided for this class. Tickets additional $36pp.",
   },
   {
     image: {
-      src: GrassSurfaces,
+      src: distillerTalks,
       classes: 'md:rotate-2 md:-translate-x-1',
-      alt: 'grass surfaces',
+      alt: 'Distiller Talks',
     },
     title: 'Distiller Talks',
     description:
@@ -41,19 +42,19 @@ const items = [
   },
   {
     image: {
-      src: cakeDecorating,
+      src: liveEntertainment,
       classes: 'md:-rotate-1 md:translate-x-1 md:translate-y-2',
-      alt: 'cake decorating',
+      alt: 'Live Entertainment',
     },
     title: 'Live Entertainment',
     description:
-      'Groove to the rhythm of live music and entertainment throughout the festival. From local bands to DJ sets, enjoy a vibrant atmosphere that sets the stage for an unforgettable celebration.',
+      'Soak up the live music and entertainment. From local bands to DJ sets, immerse yourself in the electrifying atmosphere for an epic celebration.',
   },
   {
     image: {
-      src: facePainting,
+      src: cocktailMarket,
       classes: 'md:rotate-1 md:-translate-x-1 md:-translate-y-2',
-      alt: 'cake decorating',
+      alt: 'Cocktail Market',
     },
     title: 'Cocktail Market',
     description:
@@ -63,7 +64,7 @@ const items = [
 ---
 
 <WidgetWrapper id={id}>
-  <div class="mx-auto max-w-7xl p-4 md:px-8 md:-mb-36">
+  <div class="mx-auto max-w-7xl p-4 md:px-8 md:-mb-48">
     <div class="w-full">
       {content && <h2 class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
     </div>
