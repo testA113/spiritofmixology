@@ -1,40 +1,48 @@
 ---
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import { Image } from 'astro:assets';
-import festivalCocktailPreparing from '/src/assets/images/festival-cocktail-preparing.jpg';
+import quickBrownFox from '/src/assets/images/quick-brown-fox.webp';
+import harpoon from '/src/assets/images/harpoon.webp';
+import alchemist from '/src/assets/images/alchemist.webp';
 
 const { id, content = await Astro.slots.render('content') } = Astro.props;
 
 const vendors = [
   {
-    src: festivalCocktailPreparing,
-    alt: 'preparing',
-    name: 'a',
-    link: 'https://google.com',
+    src: quickBrownFox,
+    alt: 'Quick Brown Fox Logo',
+    name: 'Quick Brown Fox',
+    link: 'https://www.quickbrownfox.co.nz',
   },
   {
-    src: festivalCocktailPreparing,
-    alt: 'preparing',
-    name: 'b',
-    link: 'https://google.com',
+    src: harpoon,
+    alt: 'Harpoon Cold Brew Coffee Logo',
+    name: 'Harpoon Cold Brew Coffee',
+    link: 'https://www.harpooncoldbrew.co.nz',
   },
   {
-    src: festivalCocktailPreparing,
-    alt: 'preparing',
-    name: 'c',
-    link: 'https://google.com',
+    src: alchemist,
+    alt: 'Alchemist Mixology Logo',
+    name: 'Alchemist Mixology',
+    link: 'https://alchemistmixology.co.nz',
   },
   {
-    src: festivalCocktailPreparing,
-    alt: 'preparing',
-    name: 'd',
-    link: 'https://google.com',
+    src: quickBrownFox,
+    alt: 'Quick Brown Fox Logo',
+    name: 'Quick Brown Fox',
+    link: 'https://www.quickbrownfox.co.nz',
   },
   {
-    src: festivalCocktailPreparing,
-    alt: 'preparing',
-    name: 'e',
-    link: 'https://google.com',
+    src: harpoon,
+    alt: 'Harpoon Cold Brew Coffee Logo',
+    name: 'Harpoon Cold Brew Coffee',
+    link: 'https://www.harpooncoldbrew.co.nz',
+  },
+  {
+    src: alchemist,
+    alt: 'Alchemist Mixology Logo',
+    name: 'Alchemist Mixology',
+    link: 'https://alchemistmixology.co.nz',
   },
 ];
 
@@ -54,7 +62,7 @@ const vendorsReverse = vendors.slice().reverse();
       class="-mt-24 w-full md:-skew-y-2 skew-y-1 overflow-hidden select-none gap-x-8 md:blur-md md:pointer-events-none flex"
     >
       <div
-        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
         {
           vendorsReverse.map(({ link, name, src, alt }) => (
@@ -73,7 +81,7 @@ const vendorsReverse = vendors.slice().reverse();
 
       <div
         aria-hidden="true"
-        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
         {
           vendorsReverse.map(({ link, name, src, alt }) => (
@@ -93,7 +101,7 @@ const vendorsReverse = vendors.slice().reverse();
 
     <div class="mt-4 md:-mt-36 w-full skew-y-1 flex overflow-hidden select-none gap-x-8">
       <div
-        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
         {
           vendors.map(({ link, name, src, alt }) => (
@@ -112,7 +120,7 @@ const vendorsReverse = vendors.slice().reverse();
 
       <div
         aria-hidden="true"
-        class="my-4 flex-shrink-0 flex items-center justify-around gap-x-8 min-w-full animate-marquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
       >
         {
           vendors.map(({ link, name, src, alt }) => (

@@ -21,11 +21,11 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative -mt-[76px] lg:-mt-[96px] not-prose text-center pb-48" {...id ? { id } : {}}>
+<section class="relative -mt-[124px] lg:-mt-[152px] not-prose text-center pb-48" {...id ? { id } : {}}>
   {imageGrid && <div class="absolute inset-0 h-full top-0 left-0 right-0" aria-hidden="true" set:html={imageGrid} />}
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 pointer-events-none z-10">
     <!-- navbar space -->
-    <div class="pt-[76px]"></div>
+    <div class="pt-[124px] lg:pt-[152px]"></div>
     <!-- title -->
     <div class="py-24 md:py-20 pb-10 md:pb-8 max-w-5xl mx-auto">
       {

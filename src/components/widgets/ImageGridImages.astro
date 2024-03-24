@@ -1,30 +1,30 @@
 ---
 import { Image } from 'astro:assets';
 
-import festivalCocktailPreparing from '/src/assets/images/festival-cocktail-preparing.jpg';
-import cocktailVendor from '/src/assets/images/cocktail-vendor.jpg';
-import erricks from '/src/assets/images/erricks.jpg';
+import festival1 from '/src/assets/images/festival-1.webp';
+import festival2 from '/src/assets/images/festival-2.webp';
+import festival3 from '/src/assets/images/festival-3.webp';
 ---
 
 <>
   <Image
-    src={festivalCocktailPreparing}
+    src={festival1}
     alt="at a festival, a bartender skillfully pours a vodka from a height to prepare a cocktail"
-    class="rounded-lg col-start-4 col-end-6 row-start-1 row-end-2 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 -rotate-1"
+    class="rounded-lg col-start-3 col-end-7 lg:col-end-7 xl:col-end-5 row-start-3 row-end-4 blur-md md:blur-lg transition-all md:hover:scale-105 duration-200 -rotate-2"
     quality="mid"
     loading="eager"
   />
   <Image
-    src={erricks}
-    alt="wide angle of erricks venue with a band playing"
-    class="rounded-lg col-start-9 col-end-12 row-start-2 row-end-3 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 rotate-3"
-    quality="mid"
-    loading="eager"
-  />
-  <Image
-    src={cocktailVendor}
+    src={festival2}
     alt="a cocktail stall serving earger customers"
-    class="rounded-lg col-start-3 col-end-7 lg:col-end-7 xl:col-end-5 row-start-3 row-end-4 blur-md md:blur-lg transition-all md:hover:scale-105 duration-300 -rotate-2"
+    class="rounded-lg col-start-9 col-end-12 row-start-2 row-end-3 blur-md md:blur-lg transition-all md:hover:scale-105 duration-200 rotate-3"
+    quality="mid"
+    loading="eager"
+  />
+  <Image
+    src={festival3}
+    alt="wide angle of erricks venue with a band playing"
+    class="rounded-lg col-start-4 col-end-6 row-start-1 row-end-2 blur-md md:blur-lg transition-all md:hover:scale-105 duration-200 -rotate-1"
     quality="mid"
     loading="eager"
   />

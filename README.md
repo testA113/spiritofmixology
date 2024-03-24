@@ -166,7 +166,7 @@ metadata:
   openGraph:
     site_name: 'Example'
     images:
-      - url: '~/assets/images/default.jpg'
+      - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
@@ -217,7 +217,7 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 ```
 
 <br>

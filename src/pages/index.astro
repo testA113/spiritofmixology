@@ -11,7 +11,8 @@ import ImageGridImages from '~/components/widgets/ImageGridImages.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'Spirit of Mixology — Free template for creating websites with Astro + Tailwind CSS',
+  title:
+    "Dunedin's premiere cocktail festival, Spirit of Mixology, is here! Join us for a blend of unique cocktails, engaging workshops, distiller talks, and electrifying entertainment with DJs and live bands.",
   ignoreTitleTemplate: true,
 };
 ---
@@ -35,7 +36,7 @@ const metadata = {
     </Fragment>
     <Fragment slot="date">
       <div class="mb-4">
-        <div>12pm-4:30pm</div>
+        <div>12pm-4:30pm / 5:30pm-10pm</div>
         <div>Saturday 8th June</div>
         <span>@ <a href="https://www.erricks.com/" class="underline">Errick's</a>, Dunedin</span>
       </div>
@@ -56,7 +57,6 @@ const metadata = {
     <Fragment slot="content">Vendors</Fragment>
   </EventPartners>
 
-  <!-- CallToAction Widget *********** -->
   <CallToAction>
     <Fragment slot="content">
       <CountdownActions client:load />
@@ -66,7 +66,7 @@ const metadata = {
   <Contact id="contact" title="Let's chat">
     <Fragment slot="subtitle"
       ><p>We'd love to hear from you! Send us a message at</p><a
-        class="text-white underline"
+        class="text-inherit underline"
         href="mailto:jaz@alchemistmixology.co.nz">jaz@alchemistmixology.co.nz</a
       ><p>and we'll get back to you as soon as possible.</p></Fragment
     ></Contact
