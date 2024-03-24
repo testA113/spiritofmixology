@@ -30,7 +30,7 @@ export function CountdownActions() {
 
   return (
     <>
-      <div className="flex gap-x-2 justify-center mb-4">
+      <div className="flex gap-x-2 justify-center mb-4 bg-accent p-3 rounded-lg">
         {!isEventStarted && (
           <>
             {Object.entries(durationUntilStart).map(([key, value]) => (
@@ -57,10 +57,10 @@ export function CountdownActions() {
 function TimerUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col gap-y-2-justify-center">
-      <div className="flex items-center justify-center w-16 h-12 bg-white rounded-md dark:bg-gray-800">
+      <div className="flex items-center justify-center w-16 h-12 opacity-100 rounded-md bg-page">
         <span className="text-2xl font-bold text-gray-900 dark:text-gray-100">{Math.floor(value)}</span>
       </div>
-      <div className="text-sm">{unPluralise(label, value)}</div>
+      <div className="text-sm text-white">{unPluralise(label, value)}</div>
     </div>
   );
 }
