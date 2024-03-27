@@ -44,7 +44,7 @@ export function CountdownActions() {
       {/* hide the ticket link if the event has started */}
       {!isEventStarted && (
         <div className="flex max-w-xs sm:max-w-md m-auto">
-          <JiggleLink url="https://google.com">
+          <JiggleLink url="https://erricks.flicket.co.nz/events/9795434d-d0ac-4297-8c8b-ba696207165d">
             <span className="text-lg md:text-xl md:hidden">get your tickets</span>
             <span className="text-lg md:text-xl hidden md:block">get 'em!</span>
           </JiggleLink>

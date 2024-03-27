@@ -35,12 +35,16 @@ const seoProps: AstroSeoProps = merge(
     openGraph: {
       url: canonical,
       site_name: SITE?.name,
-      images: [],
+      images: [
+        {
+          url: '/images/default.png',
+          width: 800,
+          height: 600,
+          alt: 'Spirit of Mixology landing page',
+        },
+      ],
       locale: I18N?.language || 'en',
       type: 'website',
-    },
-    twitter: {
-      cardType: openGraph?.images?.length ? 'summary_large_image' : 'summary',
     },
   },
   {
