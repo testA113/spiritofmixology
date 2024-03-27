@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import quickBrownFox from '/src/assets/images/quick-brown-fox.webp';
 import harpoon from '/src/assets/images/harpoon.webp';
 import alchemist from '/src/assets/images/alchemist.webp';
+import no8Distillery from '/src/assets/images/no8distillery.webp';
 
 const { id, content = await Astro.slots.render('content') } = Astro.props;
 
@@ -19,6 +20,12 @@ const vendors = [
     alt: 'Harpoon Cold Brew Coffee Logo',
     name: 'Harpoon Cold Brew Coffee',
     link: 'https://www.harpooncoldbrew.co.nz',
+  },
+  {
+    src: no8Distillery,
+    alt: 'No. 8 Distillery Logo',
+    name: 'No. 8 Distillery',
+    link: 'https://www.no8distillery.com',
   },
   {
     src: alchemist,
@@ -37,6 +44,12 @@ const vendors = [
     alt: 'Harpoon Cold Brew Coffee Logo',
     name: 'Harpoon Cold Brew Coffee',
     link: 'https://www.harpooncoldbrew.co.nz',
+  },
+  {
+    src: no8Distillery,
+    alt: 'No. 8 Distillery Logo',
+    name: 'No. 8 Distillery',
+    link: 'https://www.no8distillery.com',
   },
   {
     src: alchemist,
