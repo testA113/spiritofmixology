@@ -80,7 +80,7 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
   analytics?: unknown;
 };
 
-const DEFAULT_SITE_NAME = 'Website';
+const DEFAULT_SITE_NAME = 'Spirit of Mixology';
 
 const getSite = () => {
   const _default = {
@@ -179,7 +179,7 @@ const getAppBlog = () => {
 
 const getUI = () => {
   const _default = {
-    theme: 'system',
+    theme: 'light',
     classes: {},
     tokens: {},
   };

@@ -1,0 +1,105 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import { Image } from 'astro:assets';
+import craftCocktails from '/src/assets/images/craft-cocktails.webp';
+import mixologyWorkshops from '/src/assets/images/mixology-workshops.webp';
+import distillerTalks from '/src/assets/images/distiller-talks.webp';
+import liveEntertainment from '/src/assets/images/live-entertainment.webp';
+import cocktailMarket from '/src/assets/images/cocktail-market.webp';
+
+const { content = await Astro.slots.render('content'), id } = Astro.props;
+
+const items = [
+  {
+    image: {
+      src: craftCocktails,
+      classes: 'md:rotate-1',
+      alt: 'Craft Cocktails',
+    },
+    title: 'Craft Cocktails',
+    description:
+      'Immerse yourself in a world of flavour as you sample an impressive selection of handcrafted cocktails from renowned mixologists and local distillers.',
+  },
+  {
+    image: {
+      src: mixologyWorkshops,
+      classes: 'md:-rotate-3 md:translate-x-2 md:-translate-y-1',
+      alt: 'Mixology Workshops',
+    },
+    title: 'Mixology Workshops',
+    description:
+      "Elevate your bartending skills with this interactive masterclass led by Pequeño's own bar manager Jesse. This class will cover two methods of mixology including shaking, straining & stirring to make two cocktails. All cocktail equipment, ingredients, glassware & garnish will be provided for this class. Tickets additional $36pp.",
+  },
+  {
+    image: {
+      src: distillerTalks,
+      classes: 'md:rotate-2 md:-translate-x-1',
+      alt: 'Distiller Talks',
+    },
+    title: 'Distiller Talks',
+    description:
+      'Meet the talented distiller behind the brand, Listen to how their passion project grew into a lifestyle, option for Q&As & private tasting.',
+  },
+  {
+    image: {
+      src: liveEntertainment,
+      classes: 'md:-rotate-1 md:translate-x-1 md:translate-y-2',
+      alt: 'Live Entertainment',
+    },
+    title: 'Live Entertainment',
+    description:
+      'Soak up the live music and entertainment. From live music from NICHE to DJ sets, immerse yourself in the electrifying atmosphere for an epic celebration.',
+  },
+  {
+    image: {
+      src: cocktailMarket,
+      classes: 'md:rotate-1 md:-translate-x-1 md:-translate-y-2',
+      alt: 'Cocktail Market',
+    },
+    title: 'Cocktail Market',
+    description:
+      'Check out the cocktail market and find all cocktail-related products including barware, glassware, bitters, syrups & prebatched cocktails. Discover unique finds and stock up on essentials to elevate your home bar experience.',
+  },
+];
+---
+
+<WidgetWrapper id={id}>
+  <div class="mx-auto max-w-7xl p-4 md:px-8 md:-mb-48">
+    <div class="w-full">
+      {content && <h2 class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+    </div>
+    <div class="md:flex md:gap-16 mt-10 md:mt-0">
+      <!-- item content -->
+      <div class="md:basis-1/2">
+        {
+          items.map(({ title, description }) => (
+            <div class="md:h-[85svh] max-h-[40rem] hidden md:block">
+              <h3 class="text-2xl">{title}</h3>
+              <p class="text-lg dark:text-slate-400">{description}</p>
+            </div>
+          ))
+        }
+      </div>
+      <!-- sticky images -->
+      <div class="md:basis-1/2">
+        {
+          items.map(({ image, title, description }) => (
+            <div class="mb-24 md:mb-0 md:h-[85svh] max-h-[40rem] md:sticky top-40">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                class={`rounded-lg mb-4 md:mb-0 ${image.classes}`}
+                loading="lazy"
+                quality="mid"
+              />
+              <div class="max-h-[40rem] md:hidden">
+                <h3 class="text-2xl">{title}</h3>
+                <p class="text-lg dark:text-slate-400">{description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</WidgetWrapper>

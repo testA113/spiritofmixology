@@ -1,0 +1,137 @@
+---
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import { Image } from 'astro:assets';
+import quickBrownFox from '/src/assets/images/quick-brown-fox.webp';
+import harpoon from '/src/assets/images/harpoon.webp';
+import alchemist from '/src/assets/images/alchemist.webp';
+import no8Distillery from '/src/assets/images/no8distillery.webp';
+import cardronaDistillery from '/src/assets/images/cardrona-distillery.webp';
+
+const { id, content = await Astro.slots.render('content') } = Astro.props;
+
+const vendors = [
+  {
+    src: quickBrownFox,
+    alt: 'Quick Brown Fox Logo',
+    name: 'Quick Brown Fox',
+    link: 'https://www.quickbrownfox.co.nz',
+  },
+  {
+    src: harpoon,
+    alt: 'Harpoon Cold Brew Coffee Logo',
+    name: 'Harpoon Cold Brew Coffee',
+    link: 'https://www.harpooncoldbrew.co.nz',
+  },
+  {
+    src: no8Distillery,
+    alt: 'No. 8 Distillery Logo',
+    name: 'No. 8 Distillery',
+    link: 'https://www.no8distillery.com',
+  },
+  {
+    src: alchemist,
+    alt: 'Alchemist Mixology Logo',
+    name: 'Alchemist Mixology',
+    link: 'https://alchemistmixology.co.nz',
+  },
+  {
+    src: cardronaDistillery,
+    alt: 'Cardrona Distillery Logo',
+    name: 'Cardrona Distillery',
+    link: 'https://www.cardronadistillery.co.nz',
+  },
+];
+
+const vendorsReverse = vendors.slice().reverse();
+---
+
+<Fragment>
+  <WidgetWrapper id={id}>
+    <div class="mx-auto max-w-7xl p-4 md:px-8">
+      <div class="w-full flex justify-center">
+        {content && <h2 class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+      </div>
+    </div>
+  </WidgetWrapper>
+  <div class="group">
+    <div
+      class="-mt-24 w-full md:-skew-y-2 skew-y-1 overflow-hidden select-none gap-x-8 md:blur-md md:pointer-events-none flex"
+    >
+      <div
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+      >
+        {
+          vendorsReverse.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] md:max-w-[clamp(5rem,1rem+14vmin,10rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center md:pointer-events-none pointer-events-auto md:-scale-x-100"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+      >
+        {
+          vendorsReverse.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] md:max-w-[clamp(5rem,1rem+14vmin,10rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center md:pointer-events-none pointer-events-auto md:-scale-x-100"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-4 md:-mt-36 w-full skew-y-1 flex overflow-hidden select-none gap-x-8">
+      <div
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+      >
+        {
+          vendors.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="my-4 flex-shrink-0 flex items-start justify-around gap-x-8 min-w-full animate-marquee-reverse motion-reduce:[animation-play-state:paused] group-hover:[animation-play-state:paused]"
+      >
+        {
+          vendors.map(({ link, name, src, alt }) => (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferer"
+              class="max-w-[clamp(10rem,2rem+28vmin,20rem)] aspect-square object-cover hover:scale-105 transition duration-300 rounded-lg text-center"
+            >
+              <Image src={src} alt={alt} class="rounded-lg text-center" />
+              {name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Fragment>
